@@ -1,0 +1,35 @@
+# Reading, drafting and labelling are allowed: none of them reaches
+# anyone outside the mailbox, and each can be undone (a draft deleted, a
+# label put back). Sending is the one irreversible, outward action — an
+# email can't be recalled once it lands — so it asks a person first.
+# Loosen gmail_send to allow (or allow it only with a `when` condition)
+# once an agent's drafts have earned it.
+- name: gmail-search-allowed
+  scope: "*/*"
+  tool: gmail_search
+  decision: allow
+
+- name: gmail-get-message-allowed
+  scope: "*/*"
+  tool: gmail_get_message
+  decision: allow
+
+- name: gmail-get-thread-allowed
+  scope: "*/*"
+  tool: gmail_get_thread
+  decision: allow
+
+- name: gmail-create-draft-allowed
+  scope: "*/*"
+  tool: gmail_create_draft
+  decision: allow
+
+- name: gmail-modify-labels-allowed
+  scope: "*/*"
+  tool: gmail_modify_labels
+  decision: allow
+
+- name: gmail-send-needs-approval
+  scope: "*/*"
+  tool: gmail_send
+  decision: ask

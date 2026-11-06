@@ -1,0 +1,18 @@
+{
+  "loopengineVersion": ">=0.1.62 <1.0.0",
+  "tools": [
+    "tools/gmail_search.ts",
+    "tools/gmail_get_message.ts",
+    "tools/gmail_get_thread.ts",
+    "tools/gmail_create_draft.ts",
+    "tools/gmail_send.ts",
+    "tools/gmail_modify_labels.ts"
+  ],
+  "skills": ["skills/gmail-handling"],
+  "actauth": "actauth/rules.yml",
+  "env": [
+    { "name": "GMAIL_CLIENT_ID", "description": "The client ID of a Google Cloud OAuth client (type \"Desktop app\") in a project with the Gmail API enabled. See this ability's README for the five-minute setup.", "secret": false, "scope": "overridable" },
+    { "name": "GMAIL_CLIENT_SECRET", "description": "That OAuth client's secret.", "secret": true, "scope": "overridable" },
+    { "name": "GMAIL_REFRESH_TOKEN", "description": "A refresh token for the mailbox this agent works in, granted the https://www.googleapis.com/auth/gmail.modify scope (read, label, draft and send). Shared by default; give an agent its own to have it work in a different mailbox.", "secret": true, "scope": "overridable" }
+  ]
+}
